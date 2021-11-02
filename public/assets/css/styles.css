@@ -1,0 +1,924 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  }
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+  
+p, h4{
+    margin: 0px;
+}
+
+.headerTopContainer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.headerTopSag {
+    display: flex;
+    align-items: center;
+    padding-top: 18px;
+    justify-content: flex-end;
+}
+
+.headerTopIletisim {
+    display: flex;
+    align-items: center;
+    /*padding-top: 18px;*/
+}
+
+.headerTopIletisimText {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.headerTopIletisimText h4 {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.headerTopIletisimText p {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.headerTopCizgi {
+    width: 2px;
+    height: 42px;
+    background-color: #e9e9e9;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.btn-default {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: 0px;
+}
+
+.headerTopBtnRandevu {
+    background-color: #55c2eb;
+    height: 48px;
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    text-shadow: none;
+    transition: 0.3s;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.headerTopBtnRandevu:hover {
+    background-color: #49a6c9;
+    color: #fff
+}
+
+.headerTopBtnAra {
+    background-color: #38616e;
+    height: 48px;
+    width: 48px;
+    border-radius: 24px;
+    color: #fff;
+    text-shadow: none;
+    transition: 0.3s;
+}
+
+.headerTopBtnAra:hover {
+    background-color: #2c4e58;
+    color: #fff
+}
+
+.navbarContainer {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.navbarBg {
+    height: 60px;
+    background-color: #f4f6fa;
+    z-index: 1;
+}
+
+.navbar {
+    z-index: 9999;
+}
+
+.navbar-default {
+    box-shadow: none;
+    border: 0px;
+    background-color: transparent;
+    height: 60px;
+    margin-bottom: 0px;
+    background-image: none;
+}
+
+.navbar-nav>li>a {
+    padding: 20px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 2px solid #55c2eb;
+    box-shadow: none;
+    color: #55c2eb;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 2px solid #55c2eb;
+    box-shadow: none;
+    color: #55c2eb;
+}
+
+
+.navbarSosyalIcon{
+    font-size: 16px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+
+.sliderContainer {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    max-height: 555px;
+}
+
+.carousel-control {
+    width: 10%;
+}
+
+.carousel-control.left {
+    background-color: transparent;
+    background-image: none;
+}
+
+.carousel-control.right {
+    background-color: transparent;
+    background-image: none;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-top: -30px;
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev {
+    margin-top: -30px;
+}
+
+.carousel-caption {
+    top: 10%;
+    left: 12%;
+    bottom: auto;
+    text-align: left;
+    width: 40%;
+}
+
+.carousel-caption h3 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+}
+
+.sliderBtn {
+    height: 36px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 18px;
+    font-size: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.6);
+    transition: 0.3s;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+ }
+
+.carousel-indicators {
+    bottom: 60px;
+}
+
+#anasayfaHakkimizda {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.anasayfaHakkimizdaText {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.anasayfaHakkimizdaText h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #2d2e32;
+}
+
+.anasayfaHakkimizdaText>p {
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #4d4e52;
+}
+
+.anasayfaHakkimizdaBox {
+    background-color: rgba(85, 194, 235, 0.1);
+    margin-top: 15px;
+    padding: 20px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.anasayfaHakkimizdaBoxSayi {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(0,0,0,.2);
+    line-height: 32px;
+}
+
+.anasayfaHakkimizdaBoxP {
+    font-size: 14px;
+    color: #4d4e52;
+}
+
+#hakkimizdaSlider .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-top: 0px;
+}
+
+#hakkimizdaSlider .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev {
+    margin-top: 0px;
+}
+
+#anasayfaHizmet {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+
+.anasayfaSectionKucukBaslik h3 {
+    background-color: #55c2eb;
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 7px 20px;
+    border-radius: 99px;
+    display: inline-flex;
+}
+
+.anasayfaSectionBaslik h2 {
+    color: #2a2c2e;
+    font-weight: 700;
+    font-size: 36px;
+    margin-top: 10px;
+    margin-bottom: 40px
+}
+
+.anasayfaHizmetBox {
+    background-color: #fafbfe;
+    border: 2px solid #f4f5f9;
+    border-radius: 10px;
+    padding: 40px 25px 40px 25px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.anasayfaHizmetBox h4 {
+    color: #2a2c2e;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.anasayfaHizmetBox p {
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 26px;
+}
+
+.anasayfaHizmetBox a {
+    color: #55c2eb;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.anasayfaHizmetBox a:hover {
+    color: #38616e;
+    text-decoration: none;
+}
+
+.anasayfaSectionBtn {
+    color: #55c2eb;
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid #55c2eb;
+    border-radius: 99px;
+    padding: 12px 24px;
+    transition: 0.3s;
+    float: right;
+    margin-top: 30px
+}
+
+.anasayfaSectionBtn:hover, .anasayfaSectionBtn:focus, .anasayfaSectionBtn:active {
+    background-color: #55c2eb;
+    border: 2px solid #55c2eb;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.owl-one .item {
+    font-family: 'Poppins';
+    background-color: #fff;
+    border: 1px solid #f5f6f9;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.owl-one .item img {
+    width: 60%;
+    border-radius: 999px;
+    margin: 0 auto;
+    border: 2px solid #f3f4f9;
+    -webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.2); 
+    box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.15);
+}
+
+.owl-one .item h4 {
+    font-size: 21px;
+    font-weight: 500;
+    margin-top: 25px;
+    color: #2a2c2e;
+    margin-bottom: 10px;
+}
+
+.owl-one .item p {
+    font-size: 14px;
+    color: #a0a0a2;
+    margin-bottom: 20px;
+}
+
+.owl-dots {
+    margin-top: 30px !important;
+}
+
+.ekipBtn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #55c2eb;
+    border: 2px solid #55c2eb;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.ekipBtn:hover, .ekipBtn:focus, .ekipBtn:active {
+
+    color: #fff;
+    border: 2px solid #55c2eb;
+    background-color: #55c2eb;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#anasayfaEkip {
+    padding-top: 45px;
+    padding-bottom: 75px;
+}
+
+#anasayfaHaberler {
+    background-color: #f4f6fa;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    
+}
+
+
+.owl-two .item {
+    font-family: 'Poppins';
+    background-color: #fff;
+    border: 1px solid #f5f6f9;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.owl-two .item a {
+    text-decoration: none;
+}
+
+.owl-two .item a img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.haberImg {
+    position: relative;
+    margin-top: -40px;
+}
+
+.owl-two .item a h5 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    color: #55c2eb;
+    text-align: left;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.owl-two .item a p {
+    color: #2d2d2d;
+    line-height: 24px;
+    text-align: left;
+    padding: 10px;
+}
+
+
+
+
+footer {
+    background-color: #283036;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #d1d3d6;
+}
+
+.footerLogo {
+    text-align: center;
+    background-color: rgba(255,255,255,0.05);
+    margin-top: -30px;
+    padding: 40px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.footerLogoText {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.footerLogo a img {
+    width: 168px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.footerLogoIletisim {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.footerLogoIletisim img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.footerLogoIletisim p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footerMenuBaslik p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #55c2eb;
+    border-bottom: 2px solid #484a4d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.footerMenu ul {
+    padding-left: 0px;
+}
+
+.footerMenu ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.footerMenu ul li a {
+    font-size: 14px;
+    color: #cfd0d2;
+    padding: 8px;
+    display: block;
+    border-bottom: 1px solid #283036;
+    transition: 0.3s;
+}
+
+.footerMenu ul li a:hover {
+    text-decoration: none;
+    color: #55c2eb;
+    border-bottom: 1px solid #55c2eb;
+}
+
+.footerMenu ul li a i {
+    margin-right: 15px;
+}
+
+.footerSagBtn a {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #55c2eb;
+    padding: 15px 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: transparent;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.footerSagBtn a:hover {
+    background-color: #55c2eb;
+}
+
+.footerSagSosyal a {
+    color: #d1d0d1;
+    text-decoration: none;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+.footerSagSosyal a:hover {
+    color: #55c2eb;
+}
+
+.footerSagSosyal {
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+
+
+.footerCopy {
+    margin-top: 90px;
+    padding-top: 30px;
+    border-top: 2px solid #3d3f42;
+}
+
+
+.yukariBtn img {
+    width: 36px;
+    height: 36px;
+}
+
+
+.icSayfaSection {
+    padding-top: 90px;
+    padding-bottom: 120px;
+    background-color: #f7f7f7;
+}
+
+.icSayfaSection p {
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+.icSayfaSection hr {
+    margin-top: 23px;
+    margin-bottom: 23px;
+}
+
+.iletisimSolIcon {
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+
+.iletisimSolIcon a{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.iletisimSolIcon a:hover {
+    text-decoration: none;
+}
+
+.iletisimSolIcon a img {
+    width: 47px;
+    height: 47px;
+}
+
+.iletisimSolIcon a p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #343639;
+    margin-left: 15px;
+}
+
+.iletisimFormu {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.iletisimFormu p {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    padding: 20px 20px;
+    border-radius: 5px;
+    color: #343639;
+    border-color: #e6e6e6;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+
+
+
+
+
+
+
+.pageTitleBar {
+    width: 100%;
+    height: 185px;
+    background-image: url("../img/pagetitlebar-bg.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.pageTitleBar h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin: 0px;
+}
+
+
+.map-container{
+    margin-top: 80px;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    border-radius: 5px;
+    }
+
+.map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
+
+.btnMavi{
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #55c2eb;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 15px 30px;
+    border-radius: 99px;
+    transition: 0.3s;
+}
+
+.btnMavi:hover {
+    background-color: #3f9dba;
+    color: #ffffff;
+}
+
+
+.hizmetlerSideMenu {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.hizmetlerSideMenu h4 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 8px;
+}
+
+.hizmetlerSideMenu ul {
+    padding-left: 0px;
+}
+
+.hizmetlerSideMenu ul li {
+    list-style: none;
+    padding: 0px
+}
+
+.hizmetlerSideMenu ul li a {
+    display: block;
+    color: #a0a0a2;
+    padding: 8px 0;
+}
+
+.hizmetlerText {
+    margin-bottom: 15px;
+}
+
+.hizmetlerText img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.hizmetlerTextBaslik {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blogRow .blogRowBox {
+    font-family: 'Poppins';
+    background-color: #fff;
+    border: 1px solid #f5f6f9;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.blogRow .blogRowBox a {
+    text-decoration: none;
+}
+
+.blogRow .blogRowBox a img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.blogImg {
+    position: relative;
+    margin-top: -40px;
+}
+
+.blogRow .blogRowBox a h5 {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    color: #55c2eb;
+    text-align: left;
+    padding: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.blogRow .blogRowBox a p {
+    color: #2d2d2d;
+    line-height: 24px;
+    text-align: left;
+    padding: 10px;
+}
+
+.doktorIcImg {
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.doktorIcImg h4 {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.doktorIcImg img {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1200px){
+    .headerTopContainer {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .navbarContainer {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:768px){
+    .navbar-nav {
+        background-color: #f4f6fa;
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1300px){
+    .navbarContainer {width: 100%;}
+    .headerTopContainer {width: 100%;}
+    .headerTopIletisim {display: none;}
+}
+
+@media (max-width: 768px) {
+    .logo {text-align: center;}
+    .logo a img {max-width: 90%;}
+    .anasayfaSectionKucukBaslik {text-align: center; margin-bottom: 20px;}
+    .anasayfaSectionBaslik {text-align: center; margin-bottom: 0px;}
+    .anasayfaSectionBtn {float:none; margin-top: 0px; margin-bottom: 30px; margin-top: -10px;}
+    .anasayfaHakkimizdaText {margin-top: 20px;}
+    #anasayfaHakkimizda {padding-top: 20px;}
+    #anasayfaHizmet {margin-top: 20px;}
+    #anasayfaEkip {padding-top: 0px;}
+    .footerLogo {margin-bottom: 20px;}
+    .footerMenu {text-align: center; margin-bottom: 20px;}
+    .footerMenu ul li a {padding: 15px}
+    .footerMenu ul li a i {display: none;}
+    .footerSagSosyal a {padding: 30px;}
+    .footerSagSosyal a i {font-size: 18px;}
+    .footerCopy {margin-top: 30px;}
+    .yukariBtn {display: none;}
+    .navbar-nav .open .dropdown-menu {text-align: center; border-bottom: 3px solid #55c2eb;}
+    
+}
