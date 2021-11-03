@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Admin Panel Category Page')
+@section('title','Admin Panel Category Add Page')
 
 
 @section('content')

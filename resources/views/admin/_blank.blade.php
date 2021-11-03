@@ -1,22 +1,24 @@
 @extends('layouts.admin')
 
-@section('title','Admin Panel Category Page')
+@section('title','Admin Panel Hotel Page')
 
 
 @section('content')
     <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Category List</div>
+        <div class="breadcrumb-title pe-3">Hotel List</div>
         <div class="ps-3">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0 p-0">
                     <li class="breadcrumb-item"><a href="{{route('admin_home')}}"><i class="bx bx-home-alt"></i></a>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">Category</li>
+                    <li class="breadcrumb-item active" aria-current="page">Hotel</li>
                 </ol>
             </nav>
         </div>
     </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
+    </div>
 @endsection
 
 @section('footerjs')

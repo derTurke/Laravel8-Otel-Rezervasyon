@@ -26,6 +26,14 @@
             </a>
 
         </li>
+        <li>
+            <a href="{{route('admin_hotel')}}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Hotels</div>
+            </a>
+
+        </li>
     </ul>
     <!--end navigation-->
 </div>
