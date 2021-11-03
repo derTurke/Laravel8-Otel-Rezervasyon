@@ -34,6 +34,14 @@
             </a>
 
         </li>
+        <li>
+            <a href="{{route('admin_setting')}}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Setting</div>
+            </a>
+
+        </li>
     </ul>
     <!--end navigation-->
 </div>
