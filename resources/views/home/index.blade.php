@@ -1,12 +1,12 @@
 @extends('layouts.home')
 
-@section('title','Laravel Otel Rezervasyon Sitesi')
+@section('title',$setting->title)
 
 @section('description')
-Türkiye'deki otellerin fiyatını karşılaştırın. Milyonlarca otel fırsatı arasından ideal fiyatı bulun ve tasarruf edin.
+{{$setting->description}}
 @endsection
 
-@section('keywords','oteller, odalar, rezervasyonlar, ucuz, romantik oteller, teklifler, indirimler, fırsatlar, son dakika')
+@section('keywords',$setting->keywords)
 
 
 @section('content')

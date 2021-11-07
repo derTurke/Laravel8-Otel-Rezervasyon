@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getSetting();
+@endphp
 <!DOCTYPE html>
 <html>
 

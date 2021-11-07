@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,26 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+
+Route::prefix('/')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+    Route::get('/hotels', [HomeController::class, 'hotels'])->name('hotels');
+    Route::get('/references', [HomeController::class, 'references'])->name('references');
+    Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+    Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+    Route::get('/hotel/{id}',[HomeController::class,'hotel'])->name('hotel');
+});
+
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
+    Route::get('/',[UserController::class,'index'])->name('myprofile');
+});
+
+Route::middleware('auth')->prefix('user')->namespace('myaccount')->group(function (){
+    Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+});
 
 
 Route::middleware('auth')->prefix('admin')->group(function (){
@@ -55,10 +75,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
     });
 
+    Route::prefix('messages')->group(function (){
+        Route::get('/',[\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}',[\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update/{id}',[\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}',[\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_destroy');
+        Route::get('show',[\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+    });
+
 });
-Route::get('/admin/login', [App\Http\Controllers\Admin\HomeController::class,'login'])->name('admin_login');
+Route::get('/admin/login', [\App\Http\Controllers\Admin\HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck', [\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[\App\Http\Controllers\Admin\HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
 
 
 

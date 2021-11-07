@@ -120,6 +120,11 @@
                             <div class="valid-feedback">Successful!</div>
                         </div>
                         <div class="col-md-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" required="" value="{{$data->email}}">
+                            <div class="valid-feedback">Successful!</div>
+                        </div>
+                        <div class="col-md-12">
                             <label for="status" class="form-label">Status</label>
                             <select class="form-select is-invalid" name="status" id="status" aria-describedby="validationServer04Feedback" required="">
                                 @if($data->status)
@@ -166,7 +171,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="instagram" class="form-label">Instagram</label>
-                            <input type="text" class="form-control" name="instagram" id="instagram" required="" value="{{$data->twitter}}">
+                            <input type="text" class="form-control" name="instagram" id="instagram" required="" value="{{$data->instagram}}">
                             <div class="valid-feedback">Successful!</div>
                         </div>
                     </div>

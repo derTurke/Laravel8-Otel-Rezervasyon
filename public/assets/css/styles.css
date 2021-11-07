@@ -7,7 +7,7 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-  
+
 p, h4{
     margin: 0px;
 }
@@ -372,7 +372,7 @@ p, h4{
     border-radius: 999px;
     margin: 0 auto;
     border: 2px solid #f3f4f9;
-    -webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.2); 
+    -webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.2);
     box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.15);
 }
 
@@ -423,7 +423,7 @@ p, h4{
     background-color: #f4f6fa;
     padding-top: 80px;
     padding-bottom: 80px;
-    
+
 }
 
 
@@ -852,6 +852,24 @@ footer {
     max-width: 100%;
 }
 
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 100%;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.bg-kirmizi{
+    background: #ff416c;
+    color: #FFFFFF;
+}
+
 
 
 
@@ -881,7 +899,7 @@ footer {
         max-width: 100%;
         overflow: hidden;
     }
-    
+
     .navbarContainer {
         width: 100% !important;
     }
@@ -919,6 +937,10 @@ footer {
     .footerSagSosyal a i {font-size: 18px;}
     .footerCopy {margin-top: 30px;}
     .yukariBtn {display: none;}
-    .navbar-nav .open .dropdown-menu {text-align: center; border-bottom: 3px solid #55c2eb;}
-    
+    .navbar-nav .open .dropdown-menu {text-align: center; }
+    .navbar-nav li:hover > ul.dropdown-menu {
+        display:block;
+        z-index: -1;
+    }
+
 }

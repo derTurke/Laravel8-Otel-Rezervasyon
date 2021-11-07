@@ -32,7 +32,7 @@
                             <select class="form-select is-invalid" name="category_id" id="category_id" aria-describedby="parentFeedBack" required="">
                                 <option value="">Please select category!</option>
                                 @foreach($dataList as $rs)
-                                    <option value="{{$rs->id}}">{{$rs->title}}</option>
+                                    <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                 @endforeach
                             </select>
 

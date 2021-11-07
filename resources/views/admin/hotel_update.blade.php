@@ -32,7 +32,7 @@
                             <select class="form-select is-invalid" name="category_id" id="category_id" aria-describedby="parentFeedBack" required="">
                                 <option value="">Please select category!</option>
                                 @foreach($dataList as $rs)
-                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{$rs->title}}</option>
+                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                 @endforeach
                             </select>
 
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="image" class="form-label">Image</label>
-                            <input type="file" class="form-control" name="image" id="image" required="" value="{{$data->image}}">
+                            <input type="file" class="form-control" name="image" id="image" required="">
                             <div class="valid-feedback">Successful!</div>
 
                             @if($data->image)

@@ -8,6 +8,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller{
+
+    protected $appends = [
+        'getParentsTree',
+    ];
+
+    public static function getParentsTree($category,$title){
+        if($category->parent_id == 0){
+            return $title;
+        }
+        $data = Category::find($category->parent_id);
+        $title = $data->title.' > '.$title;
+
+        return self::getParentsTree($data,$title);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,14 +32,13 @@ class CategoryController extends Controller{
     public function index()
     {
         //$dataList = DB::select('select * from categories ');
-        $dataList = DB::table('categories')->get();
+        $dataList = Category::with('children')->get();
         return view('admin.category',['dataList' => $dataList]);
     }
 
     public function add()
     {
-        $dataList = DB::table('categories')->get()->where('parent_id',0);
-
+        $dataList = Category::with('children')->get();
         return view('admin.category_add',['dataList' => $dataList]);
     }
 
@@ -75,7 +90,7 @@ class CategoryController extends Controller{
     public function edit(Category $category,$id)
     {
         $data = Category::find($id);
-        $dataList = DB::table('categories')->get()->where('parent_id',0);
+        $dataList = Category::with('children')->get();
         return view('admin.category_update',['data'=> $data,'dataList'=>$dataList]);
     }
 

@@ -42,6 +42,14 @@
             </a>
 
         </li>
+        <li>
+            <a href="{{route('admin_message')}}">
+                <div class="parent-icon"><i class='bx bx-home-circle'></i>
+                </div>
+                <div class="menu-title">Messages</div>
+            </a>
+
+        </li>
     </ul>
     <!--end navigation-->
 </div>

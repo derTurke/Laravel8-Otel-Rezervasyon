@@ -3,17 +3,17 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="footerLogo">
-                    <a href="index.html">
+                    <a href="{{route('home')}}">
                         <img src="{{asset('assets')}}/img/footerLogo_1.svg" alt="">
                     </a>
-                    <p class="footerLogoText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                    <p class="footerLogoText">{{$setting->company}}</p>
                     <div class="footerLogoIletisim">
                         <img src="{{asset('assets')}}/img/footer-tel-icon.svg" alt="">
-                        <p></p>
+                        <p>{{$setting->phone}}</p>
                     </div>
                     <div class="footerLogoIletisim">
                         <img src="{{asset('assets')}}/img/footer-email-icon.svg" alt="">
-                        <p></p>
+                        <p>{{$setting->address}}</p>
                     </div>
                 </div>
             </div>
@@ -63,9 +63,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 footerSagSosyal">
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        @if($setting->facebook != null)<a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>@endif
+                        @if($setting->twitter != null)<a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>@endif
+                        @if($setting->instagram != null)<a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>@endif
                         <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
         <div class="row footerCopy">
             <div class="col-lg-6">
                 <p style="margin-top: 5px;">
-
+                All rights reserved | {{$setting->company}}
                 </p>
             </div>
             <div class="col-lg-6 text-right">

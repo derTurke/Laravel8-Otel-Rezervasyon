@@ -30,7 +30,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        $dataList = Category::all();
+        $dataList = Category::with('children')->get();
         return view('admin.hotel_add',['dataList' => $dataList]);
     }
 
@@ -83,7 +83,7 @@ class HotelController extends Controller
     public function edit(Hotel $hotel,$id)
     {
         $data = Hotel::find($id);
-        $dataList = Category::all();
+        $dataList = Category::with('children')->get();
         return view('admin.hotel_update',['data'=> $data,'dataList'=>$dataList]);
     }
 
@@ -100,7 +100,9 @@ class HotelController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if($request->file('image') != null){
+            $data->image = Storage::putFile('images',$request->file('image'));
+        }
         $data->category_id = $request->input('category_id');
         $data->detail = $request->input('detail');
         $data->star = $request->input('star');

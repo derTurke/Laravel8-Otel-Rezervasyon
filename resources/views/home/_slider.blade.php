@@ -7,34 +7,33 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-
+        @php
+            $counter = 1;
+        @endphp
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
 
-            <div class="item active">
-                <img src="{{asset('assets')}}/img/slider-img-1.jpg" alt="Los Angeles" style="width:100%;">
+            @foreach($slider as $rs)
+
+            <div class="item @if($counter == 1) active @endif">
+                <img src="{{Storage::url($rs->image)}}" alt="{{$rs->title}}" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.</p>
-                    <button type="button" class="btn btn-default sliderBtn">DEVAMINI OKU</button>
+                    <h3>{{$rs->title}}</h3>
+                    <a href="{{route('hotel',['id' => $rs->id])}}" class="btn btn-default sliderBtn" style="background-color: #55c2eb">İNCELE</a>
                 </div>
             </div>
+                @php
+                $counter = $counter + 1;
+                @endphp
+            @endforeach
 
-            <div class="item">
-                <img src="{{asset('assets')}}/img/slider-img-1.jpg" alt="Chicago" style="width:100%;">
-                <div class="carousel-caption">
-                    <h3>Chicago</h3>
-                    <p>Thank you, Chicago!</p>
-                </div>
-            </div>
 
-            <div class="item">
-                <img src="{{asset('assets')}}/img/slider-img-1.jpg" alt="New York" style="width:100%;">
+           <!-- <div class="item">
+                <img src="/img/slider-img-1.jpg" alt="New York" style="width:100%;">
                 <div class="carousel-caption">
                     <h3>New York</h3>
                     <p>We love the Big Apple!</p>
-                </div>
-            </div>
+                </div>-->
 
         </div>
 
