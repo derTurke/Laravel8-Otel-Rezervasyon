@@ -64,6 +64,12 @@ class HomeController extends Controller
         exit();
     }
 
+    public function categoryhotel($id){
+        $dataList = Hotel::where('category_id',$id)->get();
+        $setting = self::getSetting();
+        return view('home.category_hotels',['setting' => $setting,'dataList' => $dataList]);
+    }
+
     public function logout(Request $request){
         Auth::logout();
         $request->session()->regenerate();

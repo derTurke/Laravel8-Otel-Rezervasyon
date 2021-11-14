@@ -9,7 +9,7 @@
 
     @else
         <li>
-            <a href="#">{{$subcategory->title}}</a>
+            <a href="{{route('categoryhotel',['id' => $subcategory->id])}}">{{$subcategory->title}}</a>
         </li>
     @endif
 @endforeach

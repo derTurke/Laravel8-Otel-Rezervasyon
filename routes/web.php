@@ -25,6 +25,7 @@ Route::prefix('/')->group(function () {
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
     Route::get('/hotel/{id}',[HomeController::class,'hotel'])->name('hotel');
+    Route::get('/categoryhotel/{id}',[HomeController::class,'categoryhotel'])->name('categoryhotel');
 });
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
