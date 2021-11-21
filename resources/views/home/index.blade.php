@@ -11,14 +11,14 @@
 
 @section('content')
     @include('home._slider')
-    <section id="anasayfaHakkimizda">
+    <!-- <section id="anasayfaHakkimizda">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
 
 
                     <div id="hakkimizdaSlider" class="carousel slide carousel-fade" data-ride="carousel">
-                        <!-- Wrapper for slides -->
+
                         <div class="carousel-inner">
 
                             <div class="item active">
@@ -38,7 +38,7 @@
 
                         </div>
 
-                        <!-- Left and right controls -->
+
                         <a class="left carousel-control" href="#hakkimizdaSlider" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             <span class="sr-only">Previous</span>
@@ -101,7 +101,7 @@
             </div>
         </div>
 
-    </section>
+    </section> -->
 
     <section id="anasayfaHizmet">
         <div class="container">
@@ -176,39 +176,28 @@
                 <div class="col-lg-8"><div class="row">
                         <div class="col-lg-12 anasayfaSectionKucukBaslik">
                             <h3>
-                                Ekibimiz
+                                Sizin için öneriler
                             </h3>
                         </div>
                         <div class="col-lg-12 anasayfaSectionBaslik">
-                            <h2>Lorem Ipsum Doktorlarımız</h2>
+                            <h2>Sizin için önerilen oteller</h2>
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Ekibimizi Gör</button>
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="owl-one owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="" alt="">
-                            <h4></h4>
-                            <p></p>
-                            <a href="#" class="ekipBtn"></a>
-                        </div>
-                        <div class="item">
-                            <img src="" alt="">
-                            <h4></h4>
-                            <p></p>
-                            <a href="#" class="ekipBtn">DETAYLI BİLGİ</a>
-                        </div>
-                        <div class="item">
-                            <img src="" alt="">
-                            <h4></h4>
-                            <p></p>
-                            <a href="#" class="ekipBtn">DETAYLI BİLGİ</a>
-                        </div>
+                        @foreach($picked as $rs)
+                            <div class="item">
+                                <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
+                                <h4 style="height: 80px">{{$rs->title}}</h4>
+                                <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -218,6 +207,85 @@
         </div>
 
     </section>
+    <section id="anasayfaEkip">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8"><div class="row">
+                        <div class="col-lg-12 anasayfaSectionKucukBaslik">
+                            <h3>
+                                Oteller
+                            </h3>
+                        </div>
+                        <div class="col-lg-12 anasayfaSectionBaslik">
+                            <h2>Bugünün otelleri</h2>
+                        </div>
+                    </div></div>
+                <div class="col-lg-4 text-center">
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="owl-one owl-carousel owl-theme">
+                        @foreach($daily as $rs)
+                        <div class="item">
+                            <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
+                            <h4 style="height: 80px">{{$rs->title}}</h4>
+                            <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <section id="anasayfaEkip">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-8"><div class="row">
+                        <div class="col-lg-12 anasayfaSectionKucukBaslik">
+                            <h3>
+                                Son eklenenler
+                            </h3>
+                        </div>
+                        <div class="col-lg-12 anasayfaSectionBaslik">
+                            <h2>Son eklenen oteller</h2>
+                        </div>
+                    </div></div>
+                <div class="col-lg-4 text-center">
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="owl-one owl-carousel owl-theme">
+                        @foreach($last as $rs)
+                            <div class="item">
+                                <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
+                                <h4 style="height: 80px">{{$rs->title}}</h4>
+                                <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
 
     <section id="anasayfaHaberler">
         <div class="container">

@@ -21,9 +21,15 @@ class HomeController extends Controller
     public function index(){
         $setting = self::getSetting();
         $slider = Hotel::select('id','title','image')->limit(7)->get();
+        $daily = Hotel::select('id','title','image')->limit(7)->inRandomOrder()->get();
+        $last = Hotel::select('id','title','image')->limit(7)->orderByDesc('id')->get();
+        $picked = Hotel::select('id','title','image')->limit(7)->inRandomOrder()->get();
         $data = [
                     'setting' => $setting,
                     'slider' => $slider,
+                    'daily' => $daily,
+                    'last' => $last,
+                    'picked' => $picked
                 ];
         return view('home.index',$data);
     }

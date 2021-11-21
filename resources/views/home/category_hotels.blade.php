@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3" style="background-color: red">
+                    <div class="col-md-3">
                     </div>
                     <div class="col-md-9">
                         <div class="row">
@@ -22,7 +22,7 @@
                                         <img src="{{Storage::url($rs->image)}}" width="200" height="200" alt="">
                                         <p style="height: 80px">{{$rs->title}}</p>
 
-                                        <a href="" class="ekipBtn">DETAYLI BİLGİ</a>
+                                        <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
                                     </div>
                                 </div>
                             @endforeach
