@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Hotel;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -65,9 +66,10 @@ class HomeController extends Controller
     }
 
     public function hotel($id){
+
         $data = Hotel::find($id);
-        print_r($data);
-        exit();
+        $image = Image::where('hotel_id',"=",$id)->get();
+        return view('home.hotel_detail',['data' => $data,"image" => $image]);
     }
 
     public function categoryhotel($id){
