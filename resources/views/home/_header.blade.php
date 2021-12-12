@@ -8,8 +8,21 @@
             </div>
         </div>
         <div class="col-lg-8 visible-lg">
+
             <div class="headerTopSag">
-                <div class="headerTopIletisim">
+                <div class="headerTopBtn" style="">
+                    <form action="{{route('gethotel')}}" method="post">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-10">
+                                @livewire('search')
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-default headerTopBtnAra"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                    @livewireScripts
 
                 </div>
             </div>

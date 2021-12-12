@@ -27,7 +27,6 @@
                         <div class="col-md-12">
                             <label for="parent_id" class="form-label">Parent</label>
                             <select class="form-select is-invalid" name="parent_id" id="parent_id" aria-describedby="parentFeedBack" required="">
-
                                 <option value="">Please select parent!</option>
                                 <option value="0">Main Category</option>
                                 @foreach($dataList as $rs)

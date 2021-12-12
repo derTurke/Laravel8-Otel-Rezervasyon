@@ -11,6 +11,6 @@ class Hotel extends Model
 
     # One To Many (Inverse) / Belongs To
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class,'category_id');
     }
 }

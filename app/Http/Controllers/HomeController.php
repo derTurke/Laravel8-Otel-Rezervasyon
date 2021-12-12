@@ -77,6 +77,21 @@ class HomeController extends Controller
         $setting = self::getSetting();
         return view('home.category_hotels',['setting' => $setting,'dataList' => $dataList]);
     }
+    public function getHotel(Request $request){
+        $search = $request->input('search');
+        $count = Hotel::where('title', 'like' , '%'.$search.'%')->get()->count();
+        if($count == 1){
+            $data = Hotel::where('title','like','%'.$search.'%')->first();
+            return redirect()->route('hotel',["id" => $data->id]);
+        } else {
+          return redirect()->route('hotelList',['search' => $search]);
+        }
+    }
+    public function hotelList($search){
+        $setting = self::getSetting();
+        $dataList = Hotel::where('title','like','%'.$search.'%')->get();
+        return view('home.search_hotels',['search' => $search, 'dataList' => $dataList,'setting' => $setting]);
+    }
 
     public function logout(Request $request){
         Auth::logout();
