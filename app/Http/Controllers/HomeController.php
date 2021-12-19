@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Category;
 use App\Models\Hotel;
 use App\Models\Image;
@@ -18,6 +19,12 @@ class HomeController extends Controller
     }
     public static function getSetting(){
         return Setting::first();
+    }
+    public static function countcomment($id){
+        return Comment::where("hotel_id",$id)->count();
+    }
+    public static function avgcomment($id){
+        return Comment::where('hotel_id',$id)->average('rate');
     }
     public function index(){
         $setting = self::getSetting();
@@ -69,7 +76,8 @@ class HomeController extends Controller
 
         $data = Hotel::find($id);
         $image = Image::where('hotel_id',"=",$id)->get();
-        return view('home.hotel_detail',['data' => $data,"image" => $image]);
+        $comments = Comment::where('hotel_id',"=",$id)->get();
+        return view('home.hotel_detail',['data' => $data,"image" => $image,"comments" => $comments]);
     }
 
     public function categoryhotel($id){

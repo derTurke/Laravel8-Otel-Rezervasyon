@@ -22,7 +22,9 @@
                             </div>
                         </div>
                     </form>
-                    @livewireScripts
+                    @section('footerjs')
+                        @livewireScripts
+                    @endsection
 
                 </div>
             </div>

@@ -192,9 +192,23 @@
                 <div class="col-lg-12">
                     <div class="owl-one owl-carousel owl-theme">
                         @foreach($picked as $rs)
+                            @php
+                                $avgcomment = \App\Http\Controllers\HomeController::avgcomment($rs->id);
+                                $countcomment = \App\Http\Controllers\HomeController::countcomment($rs->id);
+                            @endphp
                             <div class="item">
                                 <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
                                 <h4 style="height: 80px">{{$rs->title}}</h4>
+                                <small>
+                                    <i class="fa @if((int)$avgcomment < 1) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 2) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 3) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 4) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 5) fa-star-o empty @else fa-star @endif"></i>
+                                    <i>({{$countcomment}})</i>
+                                </small>
+                                <br>
+                                <br>
                                 <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
                             </div>
                         @endforeach
@@ -230,9 +244,23 @@
                 <div class="col-lg-12">
                     <div class="owl-one owl-carousel owl-theme">
                         @foreach($daily as $rs)
+                            @php
+                                $avgcomment = \App\Http\Controllers\HomeController::avgcomment($rs->id);
+                                $countcomment = \App\Http\Controllers\HomeController::countcomment($rs->id);
+                            @endphp
                         <div class="item">
                             <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
                             <h4 style="height: 80px">{{$rs->title}}</h4>
+                            <small>
+                                <i class="fa @if((int)$avgcomment < 1) fa-star-o empty @else fa-star @endif"></i>
+                                <i class="fa @if((int)$avgcomment < 2) fa-star-o empty @else fa-star @endif"></i>
+                                <i class="fa @if((int)$avgcomment < 3) fa-star-o empty @else fa-star @endif"></i>
+                                <i class="fa @if((int)$avgcomment < 4) fa-star-o empty @else fa-star @endif"></i>
+                                <i class="fa @if((int)$avgcomment < 5) fa-star-o empty @else fa-star @endif"></i>
+                                <i>({{$countcomment}})</i>
+                            </small>
+                            <br>
+                            <br>
                             <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
                         </div>
                         @endforeach
@@ -269,9 +297,23 @@
                 <div class="col-lg-12">
                     <div class="owl-one owl-carousel owl-theme">
                         @foreach($last as $rs)
+                            @php
+                                $avgcomment = \App\Http\Controllers\HomeController::avgcomment($rs->id);
+                                $countcomment = \App\Http\Controllers\HomeController::countcomment($rs->id);
+                            @endphp
                             <div class="item">
                                 <img src="{{Storage::url($rs->image)}}" width="200" height="200" style="border-radius: 0" alt="">
                                 <h4 style="height: 80px">{{$rs->title}}</h4>
+                                <small>
+                                    <i class="fa @if((int)$avgcomment < 1) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 2) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 3) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 4) fa-star-o empty @else fa-star @endif"></i>
+                                    <i class="fa @if((int)$avgcomment < 5) fa-star-o empty @else fa-star @endif"></i>
+                                    <i>({{$countcomment}})</i>
+                                </small>
+                                <br>
+                                <br>
                                 <a href="{{route('hotel',['id' => $rs->id])}}" class="ekipBtn">DETAYLI BİLGİ</a>
                             </div>
                         @endforeach
