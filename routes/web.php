@@ -32,10 +32,13 @@ Route::prefix('/')->group(function () {
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
     Route::get('/',[UserController::class,'index'])->name('myprofile');
+    Route::get('mycomments',[UserController::class,'mycomments'])->name('mycomments');
+    Route::get('destroymycomment/{id}',[UserController::class,'destroymycomment'])->name('destroymycomment');
 });
 
 Route::middleware('auth')->prefix('user')->namespace('myaccount')->group(function (){
     Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+
 });
 
 
@@ -85,6 +88,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}',[\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_destroy');
         Route::get('show',[\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
     });
+
 
 });
 Route::get('/admin/login', [\App\Http\Controllers\Admin\HomeController::class,'login'])->name('admin_login');

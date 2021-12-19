@@ -79,6 +79,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{route('myprofile')}}"><i class="fa fa-user"></i> My Account</a></li>
                                 <li role="separator" class="divider"></li>
+                                <li><a href="{{route('mycomments')}}"><i class="fa fa-comment"></i> My Comments</a></li>
+                                <li role="separator" class="divider"></li>
                                 <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
                             </ul>
 
