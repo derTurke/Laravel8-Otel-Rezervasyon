@@ -43,6 +43,7 @@
                             <th>Status</th>
                             <th>Image</th>
                             <th>Image Gallery</th>
+                            <th>Room</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -68,6 +69,7 @@
                                         @endif
                                     </td>
                                     <td><a href="{{route('admin_image_add',['hotel_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><i class='bx bx-images text-success font-24'></i></a></td>
+                                    <td><a href="{{route('admin_room_add',['hotel_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')"><i class='bx bxs-hotel font-24 text-info'></i></a></td>
                                     <td><a href="{{route('admin_hotel_edit',['id' => $rs->id])}}"><i class="bx bx-pencil text-primary font-24"></i></a></td>
                                     <td><a href="{{route('admin_hotel_destroy',['id' => $rs->id])}}" onclick="return confirm('Delete! Are you sure?')"><i class="bx bx-trash text-danger font-24"></i></a></td>
                                 </tr>

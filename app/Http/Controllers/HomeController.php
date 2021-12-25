@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Hotel;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Room;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +55,9 @@ class HomeController extends Controller
         return view('home.references',["setting" => $setting]);
     }
     public function faq(){
-        return view('home.faq');
+        $dataList = Faq::all();
+        $setting = self::getSetting();
+        return view('home.faq',["dataList" => $dataList, "setting" => $setting]);
     }
     public function contact(){
         $setting = self::getSetting();
@@ -73,11 +77,12 @@ class HomeController extends Controller
     }
 
     public function hotel($id){
-
+        $setting = self::getSetting();
         $data = Hotel::find($id);
         $image = Image::where('hotel_id',"=",$id)->get();
         $comments = Comment::where('hotel_id',"=",$id)->get();
-        return view('home.hotel_detail',['data' => $data,"image" => $image,"comments" => $comments]);
+        $rooms = Room::where('hotel_id',$id)->get();
+        return view('home.hotel_detail',['setting' => $setting, 'data' => $data,"image" => $image,"comments" => $comments,"rooms" => $rooms]);
     }
 
     public function categoryhotel($id){

@@ -63,7 +63,7 @@
                         <a href="{{route('references')}}">References <span class="sr-only">(current)</span></a>
                     </li>
                     <li>
-                        <a href="{{route('hotels')}}">FAQ <span class="sr-only">(current)</span></a>
+                        <a href="{{route('faq')}}">FAQ <span class="sr-only">(current)</span></a>
                     </li>
                     <li>
                         <a href="{{route('contact')}}">Contact <span class="sr-only">(current)</span></a>
@@ -80,6 +80,10 @@
                                 <li><a href="{{route('myprofile')}}"><i class="fa fa-user"></i> My Account</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{route('mycomments')}}"><i class="fa fa-comment"></i> My Comments</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{route('user_hotel')}}"><i class="fa fa-building" aria-hidden="true"></i> My Hotels</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="{{route('user_reservation')}}"><i class="fa fa-clock-o" aria-hidden="true"></i> My Reservation</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
                             </ul>

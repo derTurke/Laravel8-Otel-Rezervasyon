@@ -62,7 +62,7 @@
                             <textarea name="detail" id="detail"></textarea>
                         </div>
                         <div class="col-md-12">
-                            <label for="star" class="form-label">Status</label>
+                            <label for="star" class="form-label">Star</label>
                             <select class="form-select is-invalid" name="star" id="star" aria-describedby="validationServer04Feedback" required="">
                                 <option value="">Please select star!</option>
                                 <option value="1">1 Star</option>

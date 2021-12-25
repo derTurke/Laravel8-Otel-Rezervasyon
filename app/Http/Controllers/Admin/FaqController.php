@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Comment;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $dataList = Comment::all();
-        return view('admin.comment',['dataList' => $dataList]);
+        $dataList = Faq::all();
+        return view('admin.faq',['dataList' => $dataList]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.faq_add');
     }
 
     /**
@@ -37,58 +37,64 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Faq;
+        $data->question = $request->input('question');
+        $data->answer = $request->input('answer');
+        $data->status = $request->input('status');
+        $data->save();
+        return redirect()->route('admin_faq')->with('success','FAQ Saved Successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Faq $faq)
     {
-        $data = Comment::find($id);
-        return view('admin.comment_edit',['data'=>$data]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Faq $faq,$id)
     {
-        //
+        $data = Faq::find($id);
+        return view('admin.faq_update',['data' => $data]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Faq $faq,$id)
     {
-        $data = Comment::find($id);
+        $data = Faq::find($id);
+        $data->question = $request->input('question');
+        $data->answer = $request->input('answer');
         $data->status = $request->input('status');
         $data->save();
-        return back()->with('success','Comment Updated');
-
+        return redirect()->route('admin_faq')->with('success','FAQ Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Faq $faq,$id)
     {
-        $data = Comment::find($id);
+        $data = Faq::find($id);
         $data->delete();
-        return back()->with('success','Comment Deleted');
+        return redirect()->route('admin_faq')->with('success','FAQ Deleted Successfully');
     }
 }

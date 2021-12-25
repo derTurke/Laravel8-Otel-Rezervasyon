@@ -16,4 +16,7 @@ class Hotel extends Model
     public function comment(){
         return $this->hasMany(Comment::class);
     }
+    public function reservation(){
+        return $this->hasMany(Reservation::class);
+    }
 }
