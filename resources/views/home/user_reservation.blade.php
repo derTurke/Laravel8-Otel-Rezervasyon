@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','My Hotels - '.$setting->title)
+@section('title','Reservation Form - '.$setting->title)
 
 
 @section('content')

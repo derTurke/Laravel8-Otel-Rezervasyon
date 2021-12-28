@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 anasayfaHakkimizdaText">
-                    <h1>{{$setting->company}}</h1>
+                    <h1>{{$setting->title}}</h1>
                     <p class="text-justify"></p>
                     {!! $setting->aboutus !!}
 

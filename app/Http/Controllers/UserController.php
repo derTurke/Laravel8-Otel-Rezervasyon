@@ -24,7 +24,7 @@ class UserController extends Controller
     }
 
     public function mycomments(){
-        $dataList = Comment::where('user_id','=',Auth::id())->get();
+        $dataList = Comment::where('user_id','=',Auth::id())->where('status','True')->orWhere('status','New')->get();
         return view('home.user_comments',['dataList' => $dataList]);
     }
 
@@ -87,11 +87,11 @@ class UserController extends Controller
         $data->ip = $_SERVER["REMOTE_ADDR"];
         $data->note = $request->input('note');
         $data->save();
-        return redirect()->route('mycomments');
+        return redirect()->route('user_reservation');
     }
 
     public function detail_reservation($id){
-        $data = Reservation::find($id);
+        $data = Reservation::where('user_id',Auth::id())->find($id);
         $setting = HomeController::getSetting();
         return view('home.user_detail_reservation',['data' => $data, 'setting' => $setting]);
 

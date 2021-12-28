@@ -1,13 +1,13 @@
 <div class="headerTopContainer">
     <div class="row">
-        <div class="col-lg-4">
-            <div class="logo">
-                <a href="index.html">
-                    <img width="322px" src="{{asset('assets')}}/img/logo.svg" alt="">
+        <div class="col-lg-6">
+            <div class="logo" style="margin-top: 20px">
+                <a href="{{route('home')}}" class="" style="color: #55c2eb;font-size: 2.5rem;">
+                    <span><i class="fa fa-building" style="margin-right: 5px"></i>{{$setting->title}}</span>
                 </a>
             </div>
         </div>
-        <div class="col-lg-8 visible-lg">
+        <div class="col-lg-6 visible-lg">
 
             <div class="headerTopSag">
                 <div class="headerTopBtn" style="">
@@ -69,10 +69,6 @@
                         <a href="{{route('contact')}}">Contact <span class="sr-only">(current)</span></a>
                     </li>
 
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right visible-lg">
                     @auth
                         <li class="dropdown" align="right">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o"></i> {{Auth::user()->name}} <span class="caret"></span></a>
@@ -93,16 +89,14 @@
                     @endauth
                     @guest
                         <li class="bg-primary" >
-                            <a href="/login" class="dropdown-toggle" style="color:#ffffff"><i class="fa fa-sign-in"></i> Login</a>
+                            <a href="/login" class="dropdown-toggle" style="color:#ffffff; background-color: #55c2eb"><i class="fa fa-sign-in"></i> Login</a>
                         </li>
                         <li>
-                            <a href="/register" class="dropdown-toggle" style="background-color:#2d2d2d;color:#ffffff;margin-left:10px;"><i class="fa fa-user-plus"></i> Register</a>
+                            <a href="/register" class="dropdown-toggle" style="background-color:#2d2d2d;color:#ffffff"><i class="fa fa-user-plus"></i> Register</a>
                         </li>
                     @endguest
+
                 </ul>
-
-
-
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

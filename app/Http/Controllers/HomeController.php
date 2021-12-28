@@ -17,10 +17,10 @@ use MongoDB\Driver\Session;
 class HomeController extends Controller
 {
     public static function categoryList(){
-        return Category::where('parent_id','=',0)->with('children')->get();
+        return Category::where('status','True')->where('parent_id','=',0)->with('children')->get();
     }
     public static function getSetting(){
-        return Setting::first();
+        return Setting::where('status','True')->first();
     }
     public static function countcomment($id){
         return Comment::where("hotel_id",$id)->count();
@@ -30,10 +30,10 @@ class HomeController extends Controller
     }
     public function index(){
         $setting = self::getSetting();
-        $slider = Hotel::select('id','title','image')->limit(7)->get();
-        $daily = Hotel::select('id','title','image')->limit(7)->inRandomOrder()->get();
-        $last = Hotel::select('id','title','image')->limit(7)->orderByDesc('id')->get();
-        $picked = Hotel::select('id','title','image')->limit(7)->inRandomOrder()->get();
+        $slider = Hotel::select('id','title','image')->where('status','True')->limit(7)->get();
+        $daily = Hotel::select('id','title','image')->where('status','True')->limit(7)->inRandomOrder()->get();
+        $last = Hotel::select('id','title','image')->where('status','True')->limit(7)->orderByDesc('id')->get();
+        $picked = Hotel::select('id','title','image')->where('status','True')->limit(7)->inRandomOrder()->get();
         $data = [
                     'setting' => $setting,
                     'slider' => $slider,
@@ -48,14 +48,16 @@ class HomeController extends Controller
         return view('home.about',["setting" => $setting]);
     }
     public function hotels(){
-        return view('home.hotels');
+        $setting = self::getSetting();
+        $dataList = Hotel::where('status','True')->get();
+        return view('home.hotels',['setting' => $setting, 'dataList' => $dataList]);
     }
     public function references(){
         $setting = self::getSetting();
         return view('home.references',["setting" => $setting]);
     }
     public function faq(){
-        $dataList = Faq::all();
+        $dataList = Faq::where('status','True')->get();
         $setting = self::getSetting();
         return view('home.faq',["dataList" => $dataList, "setting" => $setting]);
     }
@@ -78,23 +80,23 @@ class HomeController extends Controller
 
     public function hotel($id){
         $setting = self::getSetting();
-        $data = Hotel::find($id);
+        $data = Hotel::where('status','True')->find($id);
         $image = Image::where('hotel_id',"=",$id)->get();
-        $comments = Comment::where('hotel_id',"=",$id)->get();
+        $comments = Comment::where('hotel_id',"=",$id)->where('status','New')->orWhere('status','True')->get();
         $rooms = Room::where('hotel_id',$id)->get();
         return view('home.hotel_detail',['setting' => $setting, 'data' => $data,"image" => $image,"comments" => $comments,"rooms" => $rooms]);
     }
 
     public function categoryhotel($id){
-        $dataList = Hotel::where('category_id',$id)->get();
+        $dataList = Hotel::where('category_id',$id)->where('status','True')->get();
         $setting = self::getSetting();
         return view('home.category_hotels',['setting' => $setting,'dataList' => $dataList]);
     }
     public function getHotel(Request $request){
         $search = $request->input('search');
-        $count = Hotel::where('title', 'like' , '%'.$search.'%')->get()->count();
+        $count = Hotel::where('title', 'like' , '%'.$search.'%')->where('status','True')->get()->count();
         if($count == 1){
-            $data = Hotel::where('title','like','%'.$search.'%')->first();
+            $data = Hotel::where('title','like','%'.$search.'%')->where('status','True')->first();
             return redirect()->route('hotel',["id" => $data->id]);
         } else {
           return redirect()->route('hotelList',['search' => $search]);
@@ -102,7 +104,7 @@ class HomeController extends Controller
     }
     public function hotelList($search){
         $setting = self::getSetting();
-        $dataList = Hotel::where('title','like','%'.$search.'%')->get();
+        $dataList = Hotel::where('title','like','%'.$search.'%')->where('status','True')->get();
         return view('home.search_hotels',['search' => $search, 'dataList' => $dataList,'setting' => $setting]);
     }
 

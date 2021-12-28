@@ -19,15 +19,17 @@
                 <div class="col-lg-8"><div class="row">
                         <div class="col-lg-12 anasayfaSectionKucukBaslik">
                             <h3>
-                                Sizin için öneriler
+                                Recommended for you
                             </h3>
                         </div>
                         <div class="col-lg-12 anasayfaSectionBaslik">
-                            <h2>Sizin için önerilen oteller</h2>
+                            <h2>
+                                Recommended hotels for you
+                            </h2>
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
                 </div>
             </div>
 
@@ -71,15 +73,17 @@
                 <div class="col-lg-8"><div class="row">
                         <div class="col-lg-12 anasayfaSectionKucukBaslik">
                             <h3>
-                                Oteller
+                                Hotels
                             </h3>
                         </div>
                         <div class="col-lg-12 anasayfaSectionBaslik">
-                            <h2>Bugünün otelleri</h2>
+                            <h2>
+                                Today's hotels
+                            </h2>
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
                 </div>
             </div>
 
@@ -124,15 +128,17 @@
                 <div class="col-lg-8"><div class="row">
                         <div class="col-lg-12 anasayfaSectionKucukBaslik">
                             <h3>
-                                Son eklenenler
+                                Recently added
                             </h3>
                         </div>
                         <div class="col-lg-12 anasayfaSectionBaslik">
-                            <h2>Son eklenen oteller</h2>
+                            <h2>
+                                Recently added hotels
+                            </h2>
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">Tüm Otelleri Gör</button>
+                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
                 </div>
             </div>
 
