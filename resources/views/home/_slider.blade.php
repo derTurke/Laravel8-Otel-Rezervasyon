@@ -1,4 +1,4 @@
-<div class="container-fluid sliderContainer hidden-xs hidden-sm">
+<div class="container-fluid sliderContainer ">
 
     <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->

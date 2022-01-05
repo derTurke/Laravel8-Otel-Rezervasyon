@@ -29,7 +29,7 @@
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
+                    <a href="{{route('hotels')}}" class="btn btn-default anasayfaSectionBtn">See all hotels</a>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
+                    <a href="{{route('hotels')}}" class="btn btn-default anasayfaSectionBtn">See all hotels</a>
                 </div>
             </div>
 
@@ -138,7 +138,7 @@
                         </div>
                     </div></div>
                 <div class="col-lg-4 text-center">
-                    <button type="button" class="btn btn-default anasayfaSectionBtn">See all hotels</button>
+                    <a href="{{route('hotels')}}" class="btn btn-default anasayfaSectionBtn">See all hotels</a>
                 </div>
             </div>
 

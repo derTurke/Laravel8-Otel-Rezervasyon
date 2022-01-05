@@ -43,6 +43,14 @@
                                                 <td>{{date('d-m-Y',strtotime($checkout))}}</td>
                                             </tr>
                                             <tr>
+                                                <th>Adults: </th>
+                                                <td>{{$adults}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Children: </th>
+                                                <td>{{$children}}</td>
+                                            </tr>
+                                            <tr>
                                                 <th>Total Price: </th>
                                                 <td>{{$total}} ₺</td>
                                             </tr>
@@ -67,6 +75,8 @@
                                     <div class="col-lg-6">
                                         <input type="hidden" name="days" value="{{$days}}">
                                         <input type="hidden" name="checkin" value="{{$checkin}}">
+                                        <input type="hidden" name="adults" value="{{$adults}}">
+                                        <input type="hidden" name="children" value="{{$children}}">
                                         <textarea class="form-control" rows="3" id="iletisimFormuMesaj" name="note" placeholder="Note"></textarea>
                                     </div>
                                 </div>

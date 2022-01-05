@@ -3,13 +3,31 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('admin.index');
+        $new = Reservation::where('status','New')->get()->count();
+        $accepted = Reservation::where('status','Accepted')->get()->count();
+        $canceled = Reservation::where('status','Canceled')->get()->count();
+        $completed = Reservation::where('status','Completed')->get()->count();
+        $total = Reservation::where('status','New')->sum('total');
+        $total_2 = Reservation::where('status','Accepted')->sum('total');
+        $total_3 = Reservation::where('status','Canceled')->sum('total');
+        $total_4 = Reservation::where('status','Completed')->sum('total');
+        return view('admin.index',[
+            'new' => $new,
+            'accepted' => $accepted,
+            'canceled' => $canceled,
+            'completed' => $completed,
+            'total' => $total,
+            'total_2' => $total_2,
+            'total_3' => $total_3,
+            'total_4' => $total_4,
+        ]);
     }
     public function login(){
         return view('admin.login');

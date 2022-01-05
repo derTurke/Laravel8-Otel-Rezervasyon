@@ -39,7 +39,6 @@
                             <th>Category</th>
                             <th>Title(s)</th>
                             <th>Star</th>
-                            <th>Contact Information</th>
                             <th>Status</th>
                             <th>Image</th>
                             <th>Image Gallery</th>
@@ -55,13 +54,6 @@
                                     <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
                                     <td>{{$rs->title}}</td>
                                     <td>{{$rs->star}}</td>
-                                    <td>
-                                        <strong>Phone: </strong>{{$rs->phone}}<br>
-                                        <strong>Fax: </strong>{{$rs->fax}}<br>
-                                        <strong>Email: </strong>{{$rs->email}}<br>
-                                        <strong>Address: </strong>{{$rs->address}}<br>
-                                        {{$rs->location}}/{{$rs->city}}/{{$rs->country}}
-                                    </td>
                                     <td>{{$rs->status}}</td>
                                     <td>
                                         @if($rs->image)

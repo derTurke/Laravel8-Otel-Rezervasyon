@@ -17,7 +17,7 @@ use MongoDB\Driver\Session;
 class HomeController extends Controller
 {
     public static function categoryList(){
-        return Category::where('status','True')->where('parent_id','=',0)->with('children')->get();
+        return Category::where('status','True')->where('parent_id',0)->with('children')->get();
     }
     public static function getSetting(){
         return Setting::where('status','True')->first();
@@ -82,7 +82,7 @@ class HomeController extends Controller
         $setting = self::getSetting();
         $data = Hotel::where('status','True')->find($id);
         $image = Image::where('hotel_id',"=",$id)->get();
-        $comments = Comment::where('hotel_id',"=",$id)->where('status','New')->orWhere('status','True')->get();
+        $comments = Comment::where('hotel_id',$id)->where('status','True')->get();
         $rooms = Room::where('hotel_id',$id)->get();
         return view('home.hotel_detail',['setting' => $setting, 'data' => $data,"image" => $image,"comments" => $comments,"rooms" => $rooms]);
     }

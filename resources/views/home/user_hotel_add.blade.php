@@ -28,7 +28,8 @@
                                 @csrf
                                 <div class="col-md-12 form-group">
                                     <label for="parent_id" class="form-label">Category</label>
-                                    <select class="form-control" name="category_id" id="category_id" aria-describedby="parentFeedBack" required="">
+                                    <br>
+                                    <select class="" name="category_id" id="category_id" required="">
                                         <option value="">Please select category!</option>
                                         @foreach($dataList as $rs)
                                             <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
@@ -58,7 +59,8 @@
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="star" class="form-label">Star</label>
-                                    <select class="form-control" name="star" id="star" aria-describedby="" required="">
+                                    <br>
+                                    <select class="" name="star" id="star" aria-describedby="" required="">
                                         <option value="">Please select star!</option>
                                         <option value="1">1 Star</option>
                                         <option value="2">2 Star</option>

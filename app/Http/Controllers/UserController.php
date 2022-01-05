@@ -25,7 +25,8 @@ class UserController extends Controller
 
     public function mycomments(){
         $dataList = Comment::where('user_id','=',Auth::id())->where('status','True')->orWhere('status','New')->get();
-        return view('home.user_comments',['dataList' => $dataList]);
+        $setting = HomeController::getSetting();
+        return view('home.user_comments',['dataList' => $dataList , 'setting' => $setting]);
     }
 
     public function destroymycomment(Comment $comment, $id){
@@ -48,10 +49,21 @@ class UserController extends Controller
         $room = Room::find($room_id);
         $days = $_REQUEST["days"];
         $checkin = $_REQUEST["checkin"];
+        $adults = $_REQUEST["adults"];
+        $children = $_REQUEST["children"];
         $checkout = strtotime($checkin);
         $checkout = strtotime("+$days day",$checkout);
         $checkout = date("Y-m-d",$checkout);
-        $total = $days * $room->price;
+        $total = 0;
+        if ($children == 0){
+            $total = $days * $room->price * $adults;
+        } else {
+            $total_1 = $days * $room->price * $adults;
+            $total_2 = $days * $children * ($room->price * 0.4);
+            $total = $total_1 + $total_2;
+        }
+
+
 
 
         $data = [
@@ -61,7 +73,9 @@ class UserController extends Controller
             'total' => $total,
             'checkin' => $checkin,
             'checkout' => $checkout,
-            'days' => $days
+            'days' => $days,
+            'adults' => $adults,
+            'children' => $children
 
         ];
         return view("home.user_reservation",$data);
@@ -78,12 +92,22 @@ class UserController extends Controller
         $data->phone = $request->input('phone');
         $data->days = $request->input('days');
         $data->checkin = $request->input('checkin');
+        $data->adults = $request->input('adults');
+        $data->children = $request->input('children');
         $days = $request->input('days');
         $checkout = strtotime($request->input('checkin'));
         $checkout = strtotime("+$days day",$checkout);
         $checkout = date("Y-m-d",$checkout);
         $data->checkout = $checkout;
-        $data->total = $room->price * $days;
+        $total = 0;
+        if ($data->children == 0){
+            $total = $days * $room->price * $data->adults;
+        } else {
+            $total_1 = $days * $room->price * $data->adults;
+            $total_2 = $days * $data->children * ($room->price * 0.4);
+            $total = $total_1 + $total_2;
+        }
+        $data->total = $total;
         $data->ip = $_SERVER["REMOTE_ADDR"];
         $data->note = $request->input('note');
         $data->save();

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -50,6 +51,14 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
         Route::post('store/{hotel_id}', [ImageController::class, 'store'])->name('user_image_store');
         Route::get('destroy/{id}/{hotel_id}', [ImageController::class, 'destroy'])->name('user_image_destroy');
         Route::get('show', [ImageController::class, 'show'])->name('user_image_show');
+    });
+    Route::prefix('/room')->group(function(){
+        Route::get('create/{hotel_id}', [RoomController::class, 'create'])->name('user_room_add');
+        Route::post('store/{hotel_id}', [RoomController::class, 'store'])->name('user_room_store');
+        Route::get('edit/{id}/{hotel_id}', [RoomController::class, 'edit'])->name('user_room_edit');
+        Route::post('update/{id}/{hotel_id}', [RoomController::class, 'update'])->name('user_room_update');
+        Route::get('destroy/{id}/{hotel_id}', [RoomController::class, 'destroy'])->name('user_room_destroy');
+        Route::get('show', [RoomController::class, 'show'])->name('user_room_show');
     });
 
     Route::prefix('/reservation')->group(function(){

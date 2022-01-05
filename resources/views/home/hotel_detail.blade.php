@@ -108,25 +108,33 @@
                                     <td>{{$room->title}}</td>
                                     <td>{{$room->description}}</td>
                                     <td>
-                                        <img src="{{Storage::url($room->image)}}" alt="" height="200px" width="200px">
+                                        <img src="{{Storage::url($room->image)}}" alt="" height="125" width="125">
                                     </td>
-                                    <td>{{$room->price}}</td>
-                                    <td>
-                                        <form action="{{route('user_new_reservation',['hotel_id' => $data->id, 'room_id' => $room->id])}}">
-                                            <div class="col-lg-2">
-                                                <label for="days">Days</label>
-                                                <input type="number" class="form-control" name="days" id="days" value="1">
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <label for="checkin">Check-in</label>
-                                                <input type="date" class="form-control" name="checkin" value="{{date('Y-m-d')}}">
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <button type="submit" class="btn btn-default gButton">Reserve Room</button>
-                                            </div>
-                                        </form>
+                                    <td>{{$room->price}} ₺</td>
 
-                                    </td>
+                                    <form action="{{route('user_new_reservation',['hotel_id' => $data->id, 'room_id' => $room->id])}}">
+                                        <td>
+                                            <label for="adults">Adults</label>
+                                            <input type="number" class="form-control" name="adults" id="adults" value="2">
+                                        </td>
+                                        <td>
+                                            <label for="children">Children</label>
+                                            <input type="number" class="form-control" name="children" id="children" value="0">
+                                        </td>
+                                        <td>
+                                            <label for="days">Days</label>
+                                            <input type="number" class="form-control" name="days" id="days" value="1">
+                                        </td>
+                                        <td>
+                                            <label for="checkin">Check-in</label>
+                                            <input type="date" class="form-control" name="checkin" value="{{date('Y-m-d')}}">
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-default gButton" style="margin-top: 20px">Reserve Room</button>
+                                        </td>
+                                    </form>
+
+
                                 </tr>
                             @endforeach
                             </tbody>

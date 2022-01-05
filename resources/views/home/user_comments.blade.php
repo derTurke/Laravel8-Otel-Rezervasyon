@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','My Comments')
+@section('title','My Comments - '.$setting->title)
 
 
 @section('content')
