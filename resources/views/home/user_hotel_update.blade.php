@@ -29,8 +29,7 @@
                                 <div class="col-md-12 form-group">
                                     <label for="parent_id" class="form-label">Category</label>
                                     <br>
-                                    <select class="" name="category_id" id="category_id" aria-describedby="parentFeedBack" required="">
-                                        <option value="">Please select category!</option>
+                                    <select class="form-select" name="category_id" id="category_id" aria-describedby="parentFeedBack" required="">
                                         @foreach($dataList as $rs)
                                             <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                         @endforeach
@@ -72,7 +71,7 @@
 
                                         <option value="">Please select star!</option>
                                         @for($i = 1 ; $i <= 5 ; $i++)
-                                            <option value="{{$i}}" @if($i == $data->star) selected="selected" @endif>{{$i}}</option>
+                                            <option value="{{$i}}" @if($i == $data->star) selected="selected" @endif>{{$i." Star"}}</option>
                                         @endfor
                                     </select>
                                 </div>

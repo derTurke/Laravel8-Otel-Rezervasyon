@@ -1,7 +1,11 @@
 @extends('layouts.home')
 
 @section('title','Add Hotel - '.$setting->title)
+
+
+
 @section('headerjs')
+
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 @endsection
 
@@ -29,7 +33,7 @@
                                 <div class="col-md-12 form-group">
                                     <label for="parent_id" class="form-label">Category</label>
                                     <br>
-                                    <select class="" name="category_id" id="category_id" required="">
+                                    <select class="form-select" name="category_id" id="category_id" required="">
                                         <option value="">Please select category!</option>
                                         @foreach($dataList as $rs)
                                             <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
@@ -60,7 +64,7 @@
                                 <div class="col-md-12 form-group">
                                     <label for="star" class="form-label">Star</label>
                                     <br>
-                                    <select class="" name="star" id="star" aria-describedby="" required="">
+                                    <select class="form-select" name="star" id="star" aria-describedby="" required="">
                                         <option value="">Please select star!</option>
                                         <option value="1">1 Star</option>
                                         <option value="2">2 Star</option>
