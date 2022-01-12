@@ -21,7 +21,7 @@
                 </div>
                 <div class="menu-title">Reservation</div>
             </a>
-            <ul class="mm-collapse" style="height: 2px;">
+            <ul class="mm-collapse">
                 <li> <a href="{{route('admin_reservation',['slug' => 'New'])}}"><i class="bx bx-right-arrow-alt"></i><i class="badge text-white bg-danger float-end">New</i></a>
                 </li>
                 <li> <a href="{{route('admin_reservation',['slug' => 'Accepted'])}}"><i class="bx bx-right-arrow-alt"></i><i class="badge text-white bg-primary float-end">Accepted</i></a>

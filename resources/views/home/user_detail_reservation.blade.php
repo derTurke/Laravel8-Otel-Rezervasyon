@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','Update Hotel - '.$setting->title)
+@section('title','Reservation Detail - '.$setting->title)
 @section('headerjs')
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 @endsection
