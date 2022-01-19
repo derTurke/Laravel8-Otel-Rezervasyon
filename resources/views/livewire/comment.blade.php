@@ -13,11 +13,11 @@
         <div class="form-group">
             @error('rate') <span class="text-danger">{{$message}}</span>@enderror
             <strong class="text-uppercase">Your Rating: </strong>
-            <input type="radio" id="star1" wire:model="rate" value="1" /><label for="star1"></label>
-            <input type="radio" id="star2" wire:model="rate" value="2" /><label for="star2"></label>
-            <input type="radio" id="star3" wire:model="rate" value="3" /><label for="star3"></label>
-            <input type="radio" id="star4" wire:model="rate" value="4" /><label for="star4"></label>
-            <input type="radio" id="star5" wire:model="rate" value="5" /><label for="star5"></label>
+            <input type="radio" id="star1" wire:model="rate" value="1" /><label for="star1">1</label>
+            <input type="radio" id="star2" wire:model="rate" value="2" /><label for="star2">2</label>
+            <input type="radio" id="star3" wire:model="rate" value="3" /><label for="star3">3</label>
+            <input type="radio" id="star4" wire:model="rate" value="4" /><label for="star4">4</label>
+            <input type="radio" id="star5" wire:model="rate" value="5" /><label for="star5">5</label>
 
 
         </div>
